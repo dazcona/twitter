@@ -1,0 +1,14 @@
+.DS_Store
+.ipynb_checkpoints/
+.vscode/
+
+# Environment
+env/
+
+# API Keys
+twitter-api-keys.json
+linkedin-token.txt
+token.txt
+
+Facebook/
+Linkedin.ipynb
