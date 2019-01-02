@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block page_content %}
+
+    <h1 class="page-header">Menu</h1>
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+
+                Keyword:
+            
+            </div>
+
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+
+                <select id="keyword" onchange="select()">
+                    {% for option in values %}
+                        <option value="{{ option }}">{{ option }}</option>
+                    {% endfor %}
+                </select>
+
+            </div>
+
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+
+                Page:
+
+            </div>
+
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+
+                <select id="page" onchange="select()">
+                    <option value="">Select one</option>
+                    <option value="tweets">Tweets</option>
+                    <option value="map">Map</option>
+                </select>
+
+            </div>    
+
+        </div>
+
+    </div>
+
+    <script>
+
+    function select() {
+
+        var keyword_dd = document.getElementById("keyword");
+        var keyword_value = keyword_dd.options[keyword_dd.selectedIndex].value;
+
+        var page_dd = document.getElementById("page");
+        var page_value = page_dd.options[page_dd.selectedIndex].value;
+
+        if (keyword_value != 'Select one' && page_value != '') {
+            location.href = page_value + '/' + keyword_value;
+        }
+
+    }
+
+    </script>
+
+{% endblock %}

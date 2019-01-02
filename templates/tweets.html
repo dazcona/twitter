@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+<!-- Include our common macro set -->
+{% import "macros.jnj" as common %}
+
+{% block page_content %}
+
+	<h1 class="page-header">Tweets</h1>
+
+    <table class="table table-bordered table-hover">
+    <tr>
+        <th style="text-align:center"> Timestamp </th>
+        <th style="text-align:center"> User </th>
+        <th style="text-align:center"> Text </th>
+        <th style="text-align:center"> Retweets </th>
+        <th style="text-align:center"> Favourites </th>
+    </tr>
+
+    {% for tweet in tweets %}
+
+        <tr align="center">
+            <td> {{ tweet.created_at }} </td>
+            <td> {{ tweet.user.name }} </td>
+            <td> {{ tweet.text }} </td>
+            <td> {{ tweet.retweet_count }} </td>
+            <td> {{ tweet.favorite_count }} </td>
+        </tr>
+
+    {% endfor %}
+
+    </table>
+
+    {% if nav_offsets and nav_path %}
+          {{ common.display_nav(nav_path, nav_offsets) | safe }}
+    {% endif %}
+
+    <br>
+
+{% endblock %}

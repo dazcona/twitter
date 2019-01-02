@@ -1,14 +1,8 @@
 .DS_Store
 .ipynb_checkpoints/
 .vscode/
-
-# Environment
+__pycache__/
+*.pyc
 env/
-
-# API Keys
-twitter-api-keys.json
-linkedin-token.txt
-token.txt
-
-Facebook/
-Linkedin.ipynb
+config.py
+data/

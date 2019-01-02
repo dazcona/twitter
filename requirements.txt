@@ -1,2 +1,5 @@
+Flask
+Flask-Bootstrap
+pymongo
 tweepy
 TextBlob
